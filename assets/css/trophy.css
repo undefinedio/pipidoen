@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+}
+
+.container .wrapper{
+    width: 300px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+h1 {
+    color: #fff;
+    font-family: 'PIPI';
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.trophy img{
+    width: 100%;
+}

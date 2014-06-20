@@ -1,0 +1,258 @@
+.container {
+    width: 100%;
+}
+
+h1.dick-name {
+    margin: 0;
+    padding: 0;
+}
+
+.container .wrapper{
+    width: 300px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.center{
+    text-align: center;
+    margin: 0 auto;
+    width: 170px;
+}
+
+.penis {
+    bottom: 0px;
+    position: absolute;
+    display: none;
+    width: 170px;
+    cursor: pointer;
+    background: url('../img/penis.svg') no-repeat;
+    width: 170px;
+    height: 300px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    overflow-y: hidden;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.nigga-penis {
+    bottom: 0px;
+    position: absolute;
+    display: none;
+    width: 170px;
+    cursor: pointer;
+    background: url('../img/nigga-penis.svg') repeat-y;
+    width: 170px;
+    height: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    overflow-y: hidden;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+img.penis:hover {
+
+}
+
+.druppels {
+    position: relative;
+    z-index: -1;
+    opacity: 0;
+    background-image: url(../img/druppels.svg);
+    background-repeat: repeat-y;
+    height: 400px;
+    margin: 0 auto;
+    width: 44px;
+    top: 0;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.dick-name {
+    color: #fff;
+    font-family: 'PIPI';
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@-webkit-keyframes shake {
+    0%, 100% {-webkit-transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+
+@-moz-keyframes shake {
+    0%, 100% {-moz-transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {-moz-transform: translateX(10px);}
+}
+
+@-o-keyframes shake {
+    0%, 100% {-o-transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {-o-transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {-o-transform: translateX(10px);}
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+@-webkit-keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(2000px);
+        transform: translateY(2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    80% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(2000px);
+        -ms-transform: translateY(2000px);
+        transform: translateY(2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    80% {
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.bounceInUp {
+    -webkit-animation: bounceInUp .5s;
+    -moz-animation: bounceInUp .5s;
+    -o-animation: bounceInUp .5s;
+    animation: bounceInUp .5s;
+}
+
+.topTobottom {
+    animation-name: topTobottom;
+    animation-duration:  6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    -moz-animation-name: topTobottom;
+    -moz-animation-duration: 6s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    -webkit-animation-name: topTobottom;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes topTobottom {
+    0% {
+        opacity: 1;
+        background-position: 0;
+        -webkit-transform: translateY(1000px);
+        -ms-transform: translateY(1000px);
+        transform: translateY(1000px);
+
+    }
+    100% {
+        opacity: 1;
+        background-position: 0 -1000px;
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+
+@-webkit-keyframes topTobottom {
+    0% {
+        opacity: 1;
+        background-position: 0;
+    }
+    100% {
+        opacity: 1;
+        background-position: 0 -1000px;
+    }
+}
+
+.shake {
+    animation-name: shake;
+    animation-duration:  .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    -moz-animation-name: shake;
+    -moz-animation-duration:  .5s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    -webkit-animation-name: shake;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+.logout {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    font-size: 30px;
+    color: #fff;
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    border-spacing: 0;
+    padding: 0;
+    text-decoration: none;
+}
+#goback {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 30px;
+    color: #fff;
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    border-spacing: 0;
+}
+.hidden {
+    display: none ;
+}

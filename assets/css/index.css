@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+}
+
+.container .wrapper{
+    width: 300px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.logo {
+
+}
+
+form {
+    margin-top: 20px;
+}
+
+input {
+    font-family: 'PIPI';
+    -webkit-appearance: none;
+    border-radius: 3px;
+    border: none;
+    width: 100%;
+    font-size: 24px;
+    text-transform: uppercase;
+    outline: none;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

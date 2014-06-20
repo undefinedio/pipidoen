@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
+    <link rel="stylesheet" href="../assets/css/app.css"/>
+    <link rel="stylesheet" href="../assets/css/index.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="wrapper">
+        <div class="onMobile">
+            <img class="logo" src="../assets/img/logo.svg" alt=""/>
+
+            <form action="/doen.html" method="get">
+                <input type="text" id="uid" name="uid" autofocus placeholder="your dick's nick">
+                <input type="hidden" id="sound" name="sound">
+                <button id="connect" type="submit">UNZIP</button>
+            </form>
+        </div>
+        <div class="onDesktop">
+
+            <!-- put desktop content here -->
+
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+
+        if (WURFL.is_mobile) {
+            $(".onMobile").show();
+        } else {
+            $(".onDesktop").show();
+        }
+
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        $('#sound').val(getRandomInt(1, 3));
+
+        $('form').submit(function () {
+            if ($('#uid').val().length < 2) {
+                $('#uid').css('border', '1px solid red');
+                return false;
+            } else {
+                return true;
+            }
+        });
+    });
+</script>
+</body>
+</html>
