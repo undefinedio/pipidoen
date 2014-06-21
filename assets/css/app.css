@@ -11,11 +11,15 @@ html, body {
     margin: 0px;
     padding: 0px;
     border: 0px;
-    height: 100%;
+    overflow: hidden
+}
+
+h2 {
+    font-family: 'PIPI', arial, sans-serif;
+    color: white;
 }
 
 body {
-    height: 100%;
     background-color: #add7cd;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -26,8 +30,8 @@ body {
 }
 
 .logo {
-    max-width: 300px;
-    width:100%;
+
+    height: 130px;
     text-align: center;
 }
 
@@ -35,12 +39,12 @@ body {
     width: 100%;
 }
 
-.container .wrapper{
+.container .wrapper {
     padding: 10px;
 }
 
 button {
-    font-family: 'PIPI';
+    font-family: 'PIPI', arial, sans-serif;
     -webkit-appearance: none;
     border-radius: 3px;
     padding: 5px;
@@ -55,5 +59,42 @@ button {
 }
 
 button:hover {
-    background-color:#f2b704;
+    background-color: #f2b704;
+}
+
+.onMobile {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.onDesktop {
+    width: 720px;
+    margin: auto;
+    text-align: center;
+    font-size: 33px;
+}
+
+.onDesktop img {
+    height: 400px;
+}
+
+.footer .contentFooter {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-text-stroke: 1px transparent;
+    text-align: center;
+    font-family: 'PIPI', arial, sans-serif;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.footer {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.footer span {
+    font-family: courier, monospace, 'PIPI', arial, sans-serif;
 }

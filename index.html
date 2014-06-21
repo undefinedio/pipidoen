@@ -1,42 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Pipi</title>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="initial-scale=1, user-scalable=no">
+
+    <meta name="apple-touch-fullscreen" content="yes">
+
+    <!-- viewport -->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" media="(device-height: 568px)" />
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <meta http-equiv="cleartype" content="on">
+    <!-- For mobile browsers that do not recognize the viewport tag -->
+    <meta name="MobileOptimized" content="320">
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./assets/img/ios-icon.png"/>
+    <link rel="apple-touch-startup-image" href="./assets/img/splashscreen.png" media="(device-height: 568px)">
+    <link rel="apple-touch-startup-image" href="./assets/img/splashscreen-480.png" media="(device-height: 480px)">
+
+
+    <meta name="description" content="Be a man, do pipi. #spreadThePee" />
+
+    <meta name="author" content="Unde.fined.io" />
+    <meta name="copyright" content="Yes some..." />
+    <meta name="application-name" content="Pipi" />
+
+    <!-- for Facebook -->
+    <meta property="og:title" content="Pipi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://pipidoen.be/share.jpg" />
+    <meta property="og:url" content="http://pipidoen.be/" />
+    <meta property="og:description" content="Be a man, do pipi. #spreadThePee" />
+
+    <!-- for Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Pipi" />
+    <meta name="twitter:description" content="Be a man, do pipi. #spreadThePee" />
+    <meta name="twitter:image" content="http://pipidoen.be/share.jpg" />
+
+
+    <script src="./js/vendor/src/addtohomescreen.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
-    <link rel="stylesheet" href="../assets/css/app.css"/>
-    <link rel="stylesheet" href="../assets/css/index.css"/>
+
+    <link rel="stylesheet" href="./assets/css/app.css"/>
+    <link rel="stylesheet" href="./assets/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/vendor/addtohomescreen.css">
 </head>
 <body>
 <div class="container">
+    <div class="onDesktop" style="display: none;">
+
+        <!-- put desktop content here -->
+        <h2>Please open this on a mobile device with the sound cranked up!</h2>
+
+        <div class="desktopImage">
+
+        </div>
+    </div>
+
     <div class="wrapper">
         <div class="onMobile" style="display: none;">
-            <img class="logo" src="../assets/img/logo.svg" alt=""/>
+            <img class="logo" src="./assets/img/logo.svg" alt=""/>
 
-            <form action="/doen.html" method="get">
+            <form action="doen.html" method="get">
                 <input type="text" id="uid" name="uid" autofocus placeholder="your dick's nick">
-                <input type="hidden" id="sound" name="sound">
+                <!--<input type="hidden" id="sound" name="sound">-->
                 <button id="connect" type="submit">UNZIP</button>
             </form>
         </div>
-        <div class="onDesktop" style="display: none;">
-
-            <!-- put desktop content here -->
-            <h2>Please open this on a mobile device with the sound cranked up!</h2>
-
+    </div>
+    <div class="footer">
+        <div class="contentFooter">
+            created by <span>undefined.io</span> &copy; 2014
         </div>
     </div>
 </div>
 <script>
     $(function () {
+        addToHomescreen();
+
 
         if (WURFL.is_mobile) {
             $(".onMobile").show();
-        } else {
+
+        }
+        else {
             $(".onDesktop").show();
+            $(".desktopImage").append("<img src=\"./assets/img/iphone.gif\">");
         }
 
 
@@ -44,7 +102,7 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        $('#sound').val(getRandomInt(1, 3));
+        //        $('#sound').val(getRandomInt(1, 3));
 
         $('form').submit(function () {
             if ($('#uid').val().length < 2) {
@@ -54,7 +112,18 @@
                 return true;
             }
         });
-    });
+    })
+    ;
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-52133749-1', 'pipidoen.be');
+    ga('send', 'pageview');
+
 </script>
 </body>
 </html>

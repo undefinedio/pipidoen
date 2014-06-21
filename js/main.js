@@ -39,38 +39,73 @@ $(function () {
     document.body.style.webkitTouchCallout = 'none';
 
     var userName = decodeURIComponent(queryParam('uid')).replace("+", " ");
-    var userSound = queryParam('sound');
     var userColor = intToARGB(hashCode(userName)).substring(0, 6);
+    var userSound = '../assets/audio/plas' + getRandomInt(1, 3) + '.mp3';
     $('.dick-name').html(userName);
+    var $counter = $(".litersOfPee");
+    var liters = 0;
     readyForPissing();
     var plas = $("#plas")[0];
+    var litercounter;
+    var litersOfPeeInLocalStorage;
 
 
+// Put the object into storage
+    function setInLocalStorage(liters) {
+        litersOfPeeInLocalStorage = { 'liters': liters, 'dicksNick' : userName };
+        localStorage.setItem('litersOfPeeInLocalStorage', JSON.stringify(litersOfPeeInLocalStorage));
+    }
+
+// Retrieve the object from storage
+    var retrievedObject = localStorage.getItem('litersOfPeeInLocalStorage');
+
+    if (retrievedObject == null) {
+
+        litersOfPeeInLocalStorage = { 'liters': 0 };
+        localStorage.setItem('litersOfPeeInLocalStorage', JSON.stringify(litersOfPeeInLocalStorage));
+
+    } else {
+        litersOfPeeInLocalStorage = JSON.parse(retrievedObject);
+        liters = litersOfPeeInLocalStorage.liters;
+        $counter.html(liters / 100 + " L");
+        console.log('retrievedObject: ', litersOfPeeInLocalStorage);
+    }
 
 
-    document.getElementById('plas').addEventListener('ended', function () {
-        this.currentTime = 0;
-        this.play();
-    }, false);
+    var sound = new Howl({
+        urls: [userSound],
+        autoplay: false,
+        loop: true
+    });
 
 
-    function playSounds(sound) {
-        sound.pause();
-
-        sound.addEventListener('ended', function () {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-
+    function playSounds() {
         sound.play();
     }
 
-    function endSounds(sound) {
+    function endSounds() {
         sound.pause();
-        sound.currentTime = 0;
+    }
+
+    function startLiters() {
+
+        litercounter = setInterval(function () {
+            liters++;
+            $counter.html(liters / 100 + " L");
+            console.log(liters / 100 + " L");
+
+        }, 200);
+
+    }
+
+    function stopLiters() {
+        clearInterval(litercounter);
+        setInLocalStorage(liters);
     }
 
     function readyForPissing() {
+
+
         if (userName.toUpperCase() == "BLACK PYTHON") {
             $("#black-penis").show();
 
@@ -85,23 +120,27 @@ $(function () {
                 $('.druppels').addClass('topTobottom');
                 $('.penis').addClass('shake');
                 e.preventDefault();
-                playSounds(plas);
+                playSounds();
+                startLiters();
             },
             touchend: function () {
                 $('.druppels').removeClass('topTobottom');
                 $('.penis').removeClass('shake');
-                endSounds(plas);
+                endSounds();
+                stopLiters();
             },
             mouseenter: function () {
                 $('.druppels').addClass('topTobottom');
                 $('.penis').addClass('shake');
-                playSounds(plas);
+                playSounds();
+                startLiters();
             },
             mouseleave: function () {
                 $('.penis').removeClass('bounceInUp');
                 $('.penis').removeClass('shake');
                 $('.druppels').removeClass('topTobottom');
-                endSounds(plas);
+                endSounds();
+                stopLiters();
             }
         });
     };
