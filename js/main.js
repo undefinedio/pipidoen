@@ -43,32 +43,36 @@ $(function () {
     var userSound = '../assets/audio/plas' + getRandomInt(1, 3) + '.mp3';
     $('.dick-name').html(userName);
     var $counter = $(".litersOfPee");
-    var liters = 0;
+    var milliliters = 0;
     readyForPissing();
     var plas = $("#plas")[0];
     var litercounter;
     var litersOfPeeInLocalStorage;
 
-
 // Put the object into storage
-    function setInLocalStorage(liters) {
-        litersOfPeeInLocalStorage = { 'liters': liters, 'dicksNick' : userName };
-        localStorage.setItem('litersOfPeeInLocalStorage', JSON.stringify(litersOfPeeInLocalStorage));
+    function setInLocalStorage(milliliters, userName) {
+        litersOfPeeInLocalStorage = {
+            'milliliters': milliliters
+        };
+        localStorage.setItem("dick:" + userName, JSON.stringify(litersOfPeeInLocalStorage));
     }
 
+
 // Retrieve the object from storage
-    var retrievedObject = localStorage.getItem('litersOfPeeInLocalStorage');
+    var retrievedObject = localStorage.getItem("dick:" + userName);
 
-    if (retrievedObject == null) {
 
-        litersOfPeeInLocalStorage = { 'liters': 0 };
+    if (retrievedObject !== null && JSON.parse(retrievedObject)) {
+        litersOfPeeInLocalStorage = JSON.parse(retrievedObject);
+        milliliters = litersOfPeeInLocalStorage.milliliters;
+        $counter.html(milliliters / 100 + " L");
+        console.log('retrievedObject: ', litersOfPeeInLocalStorage);
+    } else {
+        litersOfPeeInLocalStorage = {
+            'milliliters': 0
+        };
         localStorage.setItem('litersOfPeeInLocalStorage', JSON.stringify(litersOfPeeInLocalStorage));
 
-    } else {
-        litersOfPeeInLocalStorage = JSON.parse(retrievedObject);
-        liters = litersOfPeeInLocalStorage.liters;
-        $counter.html(liters / 100 + " L");
-        console.log('retrievedObject: ', litersOfPeeInLocalStorage);
     }
 
 
@@ -90,9 +94,9 @@ $(function () {
     function startLiters() {
 
         litercounter = setInterval(function () {
-            liters++;
-            $counter.html(liters / 100 + " L");
-            console.log(liters / 100 + " L");
+            milliliters++;
+            $counter.html(milliliters / 100 + " L");
+            console.log(milliliters / 100 + " L");
 
         }, 200);
 
@@ -100,7 +104,7 @@ $(function () {
 
     function stopLiters() {
         clearInterval(litercounter);
-        setInLocalStorage(liters);
+        setInLocalStorage(milliliters, userName);
     }
 
     function readyForPissing() {

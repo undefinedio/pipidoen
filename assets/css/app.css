@@ -35,6 +35,10 @@ body {
     text-align: center;
 }
 
+.topMargin10 {
+    margin-top: 10px;
+}
+
 .container {
     width: 100%;
 }
@@ -93,6 +97,13 @@ button:hover {
     position: relative;
     margin-top: 20px;
     width: 100%;
+    text-decoration: none;
+}
+
+.footer .share div{
+    display: inline-block !important;
+    width: auto !important;
+    margin-right: 10px;
 }
 
 .footer span {
