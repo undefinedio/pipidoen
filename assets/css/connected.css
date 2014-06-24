@@ -2,7 +2,6 @@
     width: 100%;
 }
 
-
 .container .wrapper {
     width: 300px;
     margin: 0 auto;
@@ -272,12 +271,22 @@ img.penis:hover {
     background: none repeat scroll 0 0 transparent;
     border: medium none;
     border-spacing: 0;
-    margin-top: 20px;
 }
+
 h1.dick-name {
     margin: 0;
 
     padding: 0;
+}
+
+body.fullscreen h1.dick-name {
+    margin-top: 20px;
+}
+
+body.fullscreen #liters {
+    margin-top: 20px;
+}
+body.fullscreen #goback {
     margin-top: 20px;
 }
 
@@ -291,8 +300,10 @@ h1.dick-name {
     background: none repeat scroll 0 0 transparent;
     border: medium none;
     border-spacing: 0;
-    margin-top: 20px;
 }
+
+
+
 #liters .litersOfPee {
     font-family: 'PIPI', arial, sans-serif;
     color: white;

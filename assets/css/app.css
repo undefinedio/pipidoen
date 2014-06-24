@@ -37,6 +37,7 @@ body {
 
 .topMargin10 {
     margin-top: 10px;
+    padding-left: 30px;
 }
 
 .container {
@@ -104,6 +105,7 @@ button:hover {
     display: inline-block !important;
     width: auto !important;
     margin-right: 10px;
+    vertical-align: top;
 }
 
 .footer span {

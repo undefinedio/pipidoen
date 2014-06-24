@@ -49,12 +49,18 @@ $(function () {
     var litercounter;
     var litersOfPeeInLocalStorage;
 
+    if ( ("standalone" in window.navigator) && window.navigator.standalone){
+        $("body").addClass('fullscreen');
+    }
+
+
 // Put the object into storage
     function setInLocalStorage(milliliters, userName) {
         litersOfPeeInLocalStorage = {
             'milliliters': milliliters
         };
         localStorage.setItem("dick:" + userName, JSON.stringify(litersOfPeeInLocalStorage));
+        localStorage.setItem("latestUserName", userName);
     }
 
 
