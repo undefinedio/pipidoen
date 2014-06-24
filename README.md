@@ -2,4 +2,4 @@ pipidoen
 ========
 
 Inline-style: 
-![](https://github.com/undefinedio/pipidoen/blob/master/share.jpg)
+![](https://raw.githubusercontent.com/undefinedio/pipidoen/master/share.jpg)
