@@ -83,6 +83,16 @@ button:hover {
 .onDesktop img {
     height: 400px;
 }
+.top3 {
+    font-family: 'PIPI', arial, sans-serif;
+    color: white;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.top3 ol {
+    text-align: left;
+}
 
 .footer .contentFooter {
     text-rendering: optimizeLegibility;

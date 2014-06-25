@@ -49,7 +49,7 @@ $(function () {
     var litercounter;
     var litersOfPeeInLocalStorage;
 
-    if ( ("standalone" in window.navigator) && window.navigator.standalone){
+    if (("standalone" in window.navigator) && window.navigator.standalone) {
         $("body").addClass('fullscreen');
     }
 
@@ -61,6 +61,24 @@ $(function () {
         };
         localStorage.setItem("dick:" + userName, JSON.stringify(litersOfPeeInLocalStorage));
         localStorage.setItem("latestUserName", userName);
+
+        var userNames = localStorage.getItem("userNames");
+        if (userNames) {
+            userNames = JSON.parse(userNames);
+            userNames.forEach(function (user, index) {
+                if (user.userName == userName) {
+                    userNames.splice(index, 1);
+                }
+            });
+            var newItem = {"userName": userName, "milliliters": milliliters};
+            userNames.push(newItem);
+            localStorage.setItem("userNames", JSON.stringify(userNames));
+        } else {
+            userNames = [
+                {"userName": userName, "milliliters": milliliters}
+            ];
+            localStorage.setItem("userNames", JSON.stringify(userNames));
+        }
     }
 
 

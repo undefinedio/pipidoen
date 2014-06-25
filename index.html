@@ -79,6 +79,10 @@
                 <!--<input type="hidden" id="sound" name="sound">-->
                 <button id="connect" type="submit">UNZIP</button>
             </form>
+            <div class="top3">
+                <h3>Top 3 dicks</h3>
+                <ol></ol>
+            </div>
         </div>
     </div>
     <div class="footer">
@@ -93,7 +97,8 @@
                          data-href="http://pipidoen.be"></div>
                 </div>
                 <div><!-- TWITTER -->
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pipidoen.be" data-text="Be a man, do pipi." data-hashtags="spreadThePee"></a>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pipidoen.be"
+                       data-text="Be a man, do pipi." data-hashtags="spreadThePee"></a>
                 </div>
             </div>
 
@@ -132,6 +137,33 @@
                 $('#uid').focus();
             }, 600);
         }
+        function compare(a, b) {
+            if (a.milliliters > b.milliliters)
+                return -1;
+            if (a.milliliters < b.milliliters)
+                return 1;
+            return 0;
+        }
+
+
+        function writeTop3(userNames) {
+            var $top3 = $('.top3 ol');
+            userNames.forEach(function (user, index) {
+                $top3.append("<li>" + user.userName + "</li>");
+            });
+        }
+
+        var userNames = localStorage.getItem("userNames");
+        if (userNames) {
+            userNames = JSON.parse(userNames);
+            userNames.sort(compare);
+            userNames.slice(0, 3);
+            writeTop3(userNames);
+            userNames.forEach(function (user) {
+                console.log(user.userName + "=>" + user.milliliters);
+            })
+        }
+
 
         $('form').submit(function () {
             if ($('#uid').val().length < 2) {
