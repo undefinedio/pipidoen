@@ -50,6 +50,7 @@
     <script src="./js/vendor/src/addtohomescreen.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
+    <script src="http://cdn.bitmindo.com/dogecoin.min.js"></script>
 
     <link rel="stylesheet" href="./assets/css/app.css"/>
     <link rel="stylesheet" href="./assets/css/index.css"/>
@@ -88,7 +89,20 @@
     <div class="footer">
         <div class="contentFooter">
             <div>
-                created by <span>undefined.io</span> &copy; 2014
+                created by <a href="http://unde.fined.io" target="_blank">undefined.io</a> &copy; 2014
+            </div>
+            <div>
+                <script> CoinWidgetCom.go({
+                /* make sure you update the wallet_address or you will not get your donations */
+                    wallet_address: "DD6E1ynfZ4VdaRj5CHB1gy2UL9AkM6cZ9w",
+                    currency: "dogecoin" ,
+                    counter: "amount" ,
+                    alignment: "bc" ,
+                    qrcode: true ,
+                    auto_show: false ,
+                    lbl_button: "Donate" ,
+                    lbl_address: "Help us do more pipi, by sponsoring our next project! ",
+                    lbl_amount: "DOGECOINS" }); </script>
             </div>
             <div class="topMargin10 share">
                 <div class="fb-share-button" data-href="http://www.pipidoen.be" data-type="button_count"></div>
@@ -105,6 +119,7 @@
         </div>
     </div>
 </div>
+
 <script>
     $(function () {
         addToHomescreen();
@@ -149,7 +164,7 @@
         function writeTop3(userNames) {
             var $top3 = $('.top3 ol');
             userNames.forEach(function (user, index) {
-                $top3.append("<li>" + user.userName + "</li>");
+                $top3.append("<li>" + user.userName + " <span>"+user.milliliters/100+" L </span></li>");
             });
         }
 
